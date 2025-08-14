@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "59212953764",
+    "project_id": "amelia-ai-c16bc",
+    "storage_bucket": "amelia-ai-c16bc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdkappid": "1:59212953764:android:998c8d7b112b0a24af8e31",
+        "androidclientinfo": {
+          "package_name": "com.vivek.chatapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "currentkey": "AIzaSyAvyHayOP9eTCJ9NGAg9QX3AC3mkJxxPM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "otherplatformoauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
