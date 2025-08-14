@@ -1,0 +1,6 @@
+{
+  "mistrel_api_key": "${{ secrets.MISTREL_API_KEY }}",
+  "mistrel_endpoint": "https://api.githubmistrel.com/v1/chat",
+  "elevenlabs_api_key": "${{ secrets.ELEVENLABS_API_KEY }}",
+  "elevenlabs_voice_id": "${{ secrets.ELEVENLABS_VOICE_ID }}"
+}
