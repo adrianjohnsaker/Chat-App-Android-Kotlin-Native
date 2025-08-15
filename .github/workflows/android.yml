@@ -11,10 +11,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    env:
-      ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
-      ANDROID_HOME: /usr/local/lib/android/sdk
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -34,6 +30,9 @@ jobs:
 
       - name: Create local.properties
         run: echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
+
+      - name: Decode wrapper jar
+        run: bash .github/scripts/decode-wrapper.sh
 
       - name: Make Gradle wrapper executable
         run: chmod +x ./gradlew
