@@ -1,50 +1,11 @@
-name: Android CI
+name: Test Android Workflow
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   build:
-    name: Build APK
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
-    - name: Set up JDK
-      uses: actions/setup-java@v3
-      with:
-        distribution: 'temurin'
-        java-version: '17'
-
-    - name: Set up Android SDK
-      uses: android-actions/setup-android@v3
-      with:
-        cmdline-tools-version: 11.0
-        accept-android-sdk-licenses: true
-
-    - name: Cache Gradle
-      uses: actions/cache@v3
-      with:
-        path: |
-          ~/.gradle/caches
-          ~/.gradle/wrapper
-        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
-        restore-keys: |
-          ${{ runner.os }}-gradle-
-
-    - name: Grant execute permission to Gradle wrapper
-      run: chmod +x ./gradlew
-
-    - name: Build APK
-      run: ./gradlew assembleDebug
-
-    - name: Upload APK artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: debug-apk
-        path: app/build/outputs/apk/debug/app-debug.apk
+      - name: Echo success
+        run: echo "Workflow is running!"
