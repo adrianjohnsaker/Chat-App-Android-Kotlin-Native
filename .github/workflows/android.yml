@@ -34,22 +34,3 @@ jobs:
 
     - name: Build Backend API or Python Modules (if applicable)
       run: |
-        # Add your backend build commands here, for example:
-        python setup.py build
-
-    - name: Build Android APK (if applicable)
-      working-directory: ./android-app
-      run: |
-        ./gradlew assembleRelease
-
-    - name: Archive APK Artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: AI-Girlfriend-APK
-        path: ./android-app/app/build/outputs/apk/release/app-release.apk
-
-    - name: Archive Backend Build Artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: AI-Girlfriend-Backend
-        path: ./build
